@@ -23,6 +23,118 @@ This repository provides the implementation of a surrogate modeling framework th
 - Active learning strategies for informative sample selection;
 - Processed benchmark datasets for model training and evaluation.
 
+
 ---
 
-## Repository Structure
+# Dataset
+
+The dataset contains processed input-output pairs used for training and evaluating surrogate models.
+
+## Input
+
+The input consists of spatially variable soil parameter fields:
+
+- Cohesion fields
+- Internal friction angle fields
+
+## Output labels
+
+The corresponding outputs include:
+
+- Factor of safety (Fs)
+- Displacement fields
+- Strain fields
+- Critical slip surface (CSS) information
+
+The dataset is provided in a format directly usable for deep learning model training.
+
+---
+
+# Surrogate Models
+
+## CNN model
+
+The CNN-based surrogate model is developed for predicting scalar factor of safety:
+
+\[
+Input\ random\ fields \rightarrow F_s
+\]
+
+The model provides efficient prediction of Fs without additional high-fidelity numerical calculations.
+
+---
+
+## U-Net model
+
+The U-Net architecture is employed for high-dimensional field prediction:
+
+\[
+Input\ random\ fields
+\rightarrow
+Displacement/strain\ fields
+\]
+
+The predicted displacement and strain fields are further used for critical slip surface identification.
+
+---
+
+# Active Learning
+
+The repository includes different active learning strategies:
+
+- Least Confidence Sampling (LCUS)
+- Margin Sampling
+- Entropy Sampling
+
+These methods are used to identify informative samples and improve surrogate model performance with fewer training samples.
+
+---
+
+# Trained Models
+
+Pre-trained models are provided for reproducing the prediction results reported in the paper.
+
+The provided models include:
+
+- CNN model for Fs prediction;
+- U-Net model for displacement and strain field prediction.
+
+---
+
+# Reproducibility
+
+To reproduce the reported results:
+
+1. Download the dataset.
+2. Install the required Python packages.
+3. Train or load the provided surrogate models.
+4. Run prediction scripts.
+5. Compare the predicted results with the provided benchmark results.
+
+---
+
+# Requirements
+
+The codes are developed using:
+
+- Python >= 3.8
+- PyTorch
+- NumPy
+- Scikit-learn
+- Matplotlib
+
+---
+
+# Note
+
+The high-fidelity numerical solver used to generate the training datasets is not included in this repository.
+
+This repository provides the processed datasets, surrogate modeling framework, trained models, and prediction procedures required to reproduce the machine learning-based analyses presented in the paper.
+
+---
+
+
+
+
+
+
