@@ -1,4 +1,4 @@
-# Active-Learning-Surrogate-for-Slope-Stability
+# Spatial-Variability-Slope-Stability-Surrogate
 Surrogate modeling framework and benchmark datasets for efficient slope stability analysis considering spatial variability using deep learning and active learning.
 # Surrogate Modeling for Slope Stability Analysis Considering Spatial Variability
 
